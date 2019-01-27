@@ -26,10 +26,16 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    net.cpp \
+    neuron.cpp \
+    utilities.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    net.h \
+    neuron.h \
+    utilities.h
 
 FORMS += \
         mainwindow.ui
