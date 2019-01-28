@@ -5,11 +5,10 @@
 #include "utilities.h"
 
 using namespace std;
-using namespace chrono;
 
 int main(int argc, char *argv[])
-{
-    MNIST mnist = MNIST("C:\\Users\\Advisori\\Google Drive\\Uni\\Programmierpraktikum\\Blatt4\\");
+{     
+    MNIST mnist = MNIST("../../../../");
     mnist.testPrintout(40, 60);
 
 

@@ -1,9 +1,27 @@
 #include "mnist.h"
 
+
+/*!
+ * @brief constructor
+ *
+ * @param path: path that contains data files
+ *
+ * @return result
+ */
 MNIST::MNIST(const std::string& path) : trainingData(getMNISTdata(path + "images.bin", path + "images.labels")){
     if(!this->trainingData.size()) { std::cout <<"ERROR: parsing training data" <<std::endl; }
 }
 
+
+
+/*!
+ * @brief data loader
+ *
+ * @param imgpath: path to training images
+ * @param labelpath: path to traininglabels
+ *
+ * @return vector of  MNISTchar
+ */
 std::vector<MNISTchar> MNIST::getMNISTdata(const std::string& imagepath, const std::string& labelpath) {
     std::vector<MNISTchar> tmpdata = std::vector<MNISTchar>();
     std::fstream file (imagepath, std::ifstream::in | std::ifstream::binary);
@@ -54,6 +72,14 @@ std::vector<MNISTchar> MNIST::getMNISTdata(const std::string& imagepath, const s
     return tmpdata;
 }
 
+
+/*!
+ * @brief print sample of data to application output
+ *
+ * @param startChar: id of image to start at
+ * @param endChar: id of image to stop at
+ *
+ */
 void MNIST::testPrintout(int startChar, int endChar) const {
     for(int i = startChar; i < endChar; i++) {
         std::cout <<"------------------------------" <<std::endl;
