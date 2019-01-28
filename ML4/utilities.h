@@ -1,8 +1,10 @@
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
-#include<vector>
-#include<iostream>
+#include <vector>
+#include <iostream>
+#include <fstream>
+#include <math.h>
 
 using namespace std;
 

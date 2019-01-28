@@ -29,13 +29,15 @@ SOURCES += \
         mainwindow.cpp \
     net.cpp \
     neuron.cpp \
-    utilities.cpp
+    utilities.cpp \
+    mnist.cpp
 
 HEADERS += \
         mainwindow.h \
     net.h \
     neuron.h \
-    utilities.h
+    utilities.h \
+    mnist.h
 
 FORMS += \
         mainwindow.ui
