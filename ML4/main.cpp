@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    w.set_board(mnist.to_matrix(41));
     w.set_board(mnist.to_matrix(42));
 
     vector<int> topology = {784,64,10};
@@ -35,5 +34,4 @@ int main(int argc, char *argv[])
     }
 
     return a.exec();
-
 }

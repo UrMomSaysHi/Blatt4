@@ -154,7 +154,8 @@ void MainWindow::on_ResetButton_clicked()
 }
 
 void MainWindow::set_board(vector<vector<float>> new_board){
+    n_rows = new_board.size();
+    n_cols = new_board.back().size();
     board = new_board;
-    n_rows = board.size();
-    n_cols = board.back().size();
+    update();
 }
