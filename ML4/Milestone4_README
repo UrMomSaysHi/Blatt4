@@ -1,0 +1,20 @@
+Milestone 4
+###############################################
+
+Gruppe:
+- An Hoang 6042664
+- Zitong Zhang 6318754
+- Ramazan Özdemir 6539986
+- Hannah Wendland 5484306
+
+Arbeitsaufteilung:
+- Hannah: Aufgabe 2 a) Arbeitszeit ca. 20h
+- Zitong & An: Aufgabe 1 a)-f), Arbeitszeit ca. 40h
+- An: Aufgabe 2 b) Arbeitszeit ca. 10h
+
+################################################
+
+Aufgabe 2 a):
+Data Loader angelehnt an https://github.com/krck/MNIST-Loader.
+20 Beispiele werden auf Application Output geprintet.
+Widget wird mit einem Beispiel initialisiert.

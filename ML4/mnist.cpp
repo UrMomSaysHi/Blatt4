@@ -17,6 +17,8 @@ MNIST::MNIST(const std::string& path) : trainingData(getMNISTdata(path + "images
 /*!
  * @brief data loader
  *
+ * @copyright 2016 Peter Baumann
+ *
  * @param imgpath: path to training images
  * @param labelpath: path to traininglabels
  *
@@ -75,6 +77,8 @@ std::vector<MNISTchar> MNIST::getMNISTdata(const std::string& imagepath, const s
 
 /*!
  * @brief print sample of data to application output
+ *
+ * @copyright 2016 Peter Baumann
  *
  * @param startChar: id of image to start at
  * @param endChar: id of image to stop at
