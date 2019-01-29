@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <math.h>
 
 // BIG-Endian to LITTLE-Endian byte swap
 #define swap16(n) (((n&0xFF00)>>8)|((n&0x00FF)<<8))
@@ -36,6 +37,7 @@ private:
 
 public:
     void testPrintout(int startChar, int endChar) const;
+    std::vector<std::vector<float>> to_matrix(size_t idx);
 };
 
 #endif

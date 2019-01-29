@@ -99,7 +99,28 @@ void MNIST::testPrintout(int startChar, int endChar) const {
         std::cout <<" Expected Output: ";
         for(const short& x : trainingData[i].output) { std::cout <<x; }
         std::cout <<std::endl;
-        std::cout <<"\t\tThis is a: " <<trainingData[i].label  <<std::endl;
+        std::cout <<"\t\tThis is a: " << trainingData[i].label  <<std::endl;
         std::cout <<"------------------------------" <<std::endl;
     }
+}
+
+
+/*!
+ * @brief convert image to matrix for displaying on widget
+ *
+ * @param idx index of image in trainingData
+ *
+ * @return image as matrix
+ *
+ */
+std::vector<std::vector<float>> MNIST::to_matrix(size_t idx) {
+    std::vector<float> img = trainingData[idx].pixelData;
+    size_t n = static_cast<size_t>(sqrt(img.size()));
+    std::vector<std::vector<float>> result(n, std::vector<float>(n));
+    for (size_t i=0; i<n; i++){
+        for (size_t j=0; j<n; j++) {
+            result[i][j] = img[n*i+j];
+        }
+    }
+    return result;
 }
