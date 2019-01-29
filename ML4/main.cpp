@@ -9,7 +9,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {     
-    MNIST mnist = MNIST("../../../../");
+    MNIST mnist = MNIST("C:\\Users\\Advisori\\Google Drive\\Uni\\Programmierpraktikum\\Blatt4\\");
     mnist.testPrintout(40, 60);
 
     QApplication a(argc, argv);
@@ -25,7 +25,9 @@ int main(int argc, char *argv[])
     double eta = 0.3;
     double alpha = 0.01;
 
-    int iterations = 100;
+
+    //int iterations = mnist.trainingData.size();
+    int iterations = 1000;
 
     for(int i = 0; i < iterations; i++){
         vector<double> train_vec(mnist.trainingData[i].pixelData.begin(), mnist.trainingData[i].pixelData.end());

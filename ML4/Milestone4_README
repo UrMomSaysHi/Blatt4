@@ -1,4 +1,4 @@
-Milestone 4
+﻿Milestone 4
 ###############################################
 
 Gruppe:
@@ -14,7 +14,16 @@ Arbeitsaufteilung:
 
 ################################################
 
+Aufgabe 1 a)
+Die größe des Boards kann über die Variablen n_rows und n_cols in mainwindow.h verändert werden.
+
+Aufgabe 1 c)
+board kann über die Funktion set_board verändert werden
+
 Aufgabe 2 a):
 Data Loader angelehnt an https://github.com/krck/MNIST-Loader.
 20 Beispiele werden auf Application Output geprintet.
 Widget wird mit einem Beispiel initialisiert.
+
+Aufgabe 2 b)
+Das training wird nur für 200 Bilder durchgeführt da das Programm sonst abstürzt

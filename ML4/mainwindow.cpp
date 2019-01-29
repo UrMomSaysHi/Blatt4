@@ -20,6 +20,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/*!
+ * @brief paint the board
+ */
 void MainWindow::paintEvent(QPaintEvent *)
 {
 
@@ -35,15 +38,6 @@ void MainWindow::paintEvent(QPaintEvent *)
     for(int i = 0; i < n_rows; i++){
         for(int j = 0; j < n_cols; j++){
 
-//            if(board[i][j] == 0){
-//                painter.setBrush(Qt::white);
-//            } else if (board[i][j] <= 0.5) {
-//                painter.setBrush(Qt::black);
-//            } else {
-//                painter.setBrush(QColor(0, 0, 0, 255*board[i][j]));
-//                cout << board[i][j] << endl;
-//            }
-
             int color = 255*board[i][j];
             painter.setBrush(QColor(0, 0, 0, color));
             painter.drawRect(start_pos+j*cell_width,
@@ -55,6 +49,15 @@ void MainWindow::paintEvent(QPaintEvent *)
 
 }
 
+/*!
+ * @brief returns an empty board vector
+ *
+ * @param nb_rows number of rows
+ *
+ * @param nb_cols number of columns
+ *
+ * @return an empty board vector
+ */
 vector<vector<float>> MainWindow::empty_board(int nb_rows, int nb_cols){
    vector<vector<float>> r_board;
    for(int i = 0; i < nb_rows; i++){
@@ -68,12 +71,11 @@ vector<vector<float>> MainWindow::empty_board(int nb_rows, int nb_cols){
    return(r_board);
 }
 
-//void MainWindow::mouseReleaseEvent(QMouseEvent *){
-//    pressed = false;
-//    cout << "yo" << endl;
-//}
 
-
+/*!
+ * @brief colors the box on which the mouse moves and clicks
+ *
+ */
 void MainWindow::mouseMoveEvent(QMouseEvent *ev){
         QPoint point = ev -> pos();
 
@@ -81,36 +83,16 @@ void MainWindow::mouseMoveEvent(QMouseEvent *ev){
         int ypos =  point.y();
 
         color_box(xpos, ypos);
-
 }
 
-//void MainWindow::mousePressEvent(QMouseEvent*ev){
 
-//    pressed = true;
-//    //    QPoint point = ev -> pos();
-
-//    //    int xpos =  point.x();
-//    //    int ypos =  point.y();
-
-//    //    color_box(xpos, ypos);
-
-
-////    if (xpos >= img_height || ypos >= img_width){
-////        //throw 0;
-////    } else {
-////        int col = (xpos * ncols)/img_width;
-////        int row = (ypos * nrows)/img_height;
-
-////        if (game.currentGeneration[row][col].status == 0){
-////            game.currentGeneration[row][col] = Cell(row, col, 1);
-////        } else {
-////            game.currentGeneration[row][col] = Cell(row, col, 0);
-////        }
-////    }
-//    update();
-
-//}
-
+/*!
+ * @brief colors the box at the given coordinates
+ *
+ * @param xpos x coordinate
+ *
+ * @param ypos y coordinate
+ */
 void MainWindow::color_box(float xpos, float ypos){
     if (xpos > start_pos && xpos < start_pos + box_height && ypos > start_pos && ypos < start_pos + box_height){
         int col = ((xpos-start_pos) * n_cols)/box_height;
@@ -147,12 +129,24 @@ void MainWindow::color_box(float xpos, float ypos){
     }
 }
 
+
+/*!
+ * @brief resets the board on mouseclick
+ *
+ */
 void MainWindow::on_ResetButton_clicked()
 {
     board = empty_board(n_rows, n_cols);
     update();
 }
 
+
+/*!
+ * @brief sets the board to the given board_vector
+ *
+ * @param new_board boardvector
+ *
+ */
 void MainWindow::set_board(vector<vector<float>> new_board){
     n_rows = new_board.size();
     n_cols = new_board.back().size();
